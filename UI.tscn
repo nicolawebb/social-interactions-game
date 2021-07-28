@@ -1,0 +1,414 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://UI.gd" type="Script" id=1]
+[ext_resource path="res://Lato-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/Menu/happyicon.jpg" type="Texture" id=3]
+[ext_resource path="res://assets/Menu/angryicon.jpg" type="Texture" id=4]
+[ext_resource path="res://assets/Menu/happy.png" type="Texture" id=5]
+[ext_resource path="res://assets/Menu/neutralicon.jpg" type="Texture" id=6]
+[ext_resource path="res://FredokaOne-Regular.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://SpeechBubble.tscn" type="PackedScene" id=8]
+
+[sub_resource type="DynamicFont" id=1]
+
+[sub_resource type="DynamicFont" id=2]
+size = 20
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 20
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 20
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 13
+font_data = ExtResource( 7 )
+
+[node name="UI" type="Control"]
+anchor_left = -0.00185546
+anchor_top = -0.00158333
+anchor_right = 0.998145
+anchor_bottom = 0.998417
+mouse_filter = 2
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_left = 0.000976562
+anchor_top = 0.568333
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_clip_content = true
+color = Color( 0.168627, 0.152941, 0.152941, 0.4 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Button1" type="Button" parent="ColorRect"]
+anchor_left = 0.0128431
+anchor_top = 0.0446621
+anchor_right = 0.356929
+anchor_bottom = 0.473234
+margin_left = 6.0
+margin_top = 0.00038147
+margin_right = 1.00008
+margin_bottom = -3.99962
+rect_pivot_offset = Vector2( 71, 18 )
+custom_fonts/font = SubResource( 1 )
+disabled = true
+clip_text = true
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Label" type="Label" parent="ColorRect/Button1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 2.0
+margin_top = -1.0
+margin_right = -1.0
+margin_bottom = -60.0
+custom_fonts/font = SubResource( 2 )
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Happy1" type="Button" parent="ColorRect/Button1"]
+margin_left = 47.0785
+margin_top = 51.9655
+margin_right = 99.0785
+margin_bottom = 97.9655
+rect_pivot_offset = Vector2( 26, 23 )
+icon = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Neutral1" type="Button" parent="ColorRect/Button1"]
+margin_left = 145.96
+margin_top = 51.9248
+margin_right = 197.96
+margin_bottom = 97.9248
+rect_pivot_offset = Vector2( 26, 23 )
+icon = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Angry1" type="Button" parent="ColorRect/Button1"]
+margin_left = 234.293
+margin_top = 53.4724
+margin_right = 286.293
+margin_bottom = 99.4724
+rect_pivot_offset = Vector2( 26, 23 )
+icon = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="ColorRect"]
+anchor_left = 0.0161383
+anchor_top = 0.526816
+anchor_right = 0.353382
+anchor_bottom = 1.12913
+margin_left = 2.0
+margin_top = -3.05176e-05
+margin_right = 3.00029
+margin_bottom = -45.9997
+rect_pivot_offset = Vector2( 71, 18 )
+disabled = true
+clip_text = true
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Label" type="Label" parent="ColorRect/Button2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -3.05176e-05
+margin_bottom = -61.0
+custom_fonts/font = SubResource( 3 )
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Happy2" type="Button" parent="ColorRect/Button2"]
+margin_left = 46.264
+margin_top = 53.0243
+margin_right = 98.264
+margin_bottom = 99.0243
+icon = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Neutral2" type="Button" parent="ColorRect/Button2"]
+margin_left = 142.742
+margin_top = 55.5085
+margin_right = 194.742
+margin_bottom = 101.509
+icon = ExtResource( 6 )
+
+[node name="Angry2" type="Button" parent="ColorRect/Button2"]
+margin_left = 228.591
+margin_top = 53.839
+margin_right = 280.591
+margin_bottom = 99.839
+icon = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button3" type="Button" parent="ColorRect"]
+anchor_left = 0.383146
+anchor_top = 0.0497777
+anchor_right = 0.72039
+anchor_bottom = 0.497653
+margin_left = -2.0
+margin_top = -0.000457764
+margin_right = 0.999557
+margin_bottom = -9.00012
+rect_pivot_offset = Vector2( 71, 18 )
+disabled = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Label" type="Label" parent="ColorRect/Button3"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1.0
+margin_top = 2.0
+margin_bottom = -58.0
+custom_fonts/font = SubResource( 4 )
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Happy3" type="Button" parent="ColorRect/Button3"]
+margin_left = 38.6483
+margin_top = 52.9022
+margin_right = 90.6483
+margin_bottom = 98.9022
+icon = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Neutral3" type="Button" parent="ColorRect/Button3"]
+margin_left = 150.399
+margin_top = 52.78
+margin_right = 202.399
+margin_bottom = 98.78
+icon = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Angry3" type="Button" parent="ColorRect/Button3"]
+margin_left = 242.967
+margin_top = 56.038
+margin_right = 294.967
+margin_bottom = 102.038
+icon = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button4" type="Button" parent="ColorRect"]
+anchor_left = 0.384158
+anchor_top = 0.529756
+anchor_right = 0.721402
+anchor_bottom = 0.981493
+margin_left = -2.0
+margin_top = -0.000457764
+margin_right = 0.999557
+margin_bottom = -9.00012
+rect_pivot_offset = Vector2( 71, 18 )
+disabled = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Label" type="Label" parent="ColorRect/Button4"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 0.814484
+margin_top = 0.185455
+margin_right = 0.814484
+margin_bottom = -60.8145
+custom_fonts/font = SubResource( 4 )
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Happy4" type="Button" parent="ColorRect/Button4"]
+margin_left = 41.5398
+margin_top = 52.1284
+margin_right = 93.5398
+margin_bottom = 98.1284
+icon = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Neutral4" type="Button" parent="ColorRect/Button4"]
+margin_left = 144.168
+margin_top = 53.7574
+margin_right = 196.168
+margin_bottom = 99.7574
+icon = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Angry4" type="Button" parent="ColorRect/Button4"]
+margin_left = 241.094
+margin_top = 53.7574
+margin_right = 293.094
+margin_bottom = 99.7574
+icon = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button5" type="Button" parent="ColorRect"]
+anchor_left = 0.89544
+anchor_top = 0.0391938
+anchor_right = 0.99026
+anchor_bottom = 0.251548
+margin_left = -2.0
+margin_top = -0.000457764
+margin_right = 0.999557
+margin_bottom = -9.00012
+rect_pivot_offset = Vector2( 71, 18 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Label" type="Label" parent="ColorRect/Button5"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -0.2276
+margin_top = 0.555542
+margin_right = -0.2276
+margin_bottom = -0.444458
+custom_fonts/font = SubResource( 4 )
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Restart" type="Label" parent="ColorRect/Button5"]
+margin_left = 6.00977
+margin_top = 49.3463
+margin_right = 98.0098
+margin_bottom = 66.3463
+custom_fonts/font = SubResource( 5 )
+text = "Reset Dialogue"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonDELETE" type="Button" parent="ColorRect"]
+visible = false
+anchor_left = 0.109824
+anchor_top = 0.834172
+anchor_right = 0.244722
+anchor_bottom = 0.946139
+margin_left = -2.0
+margin_top = -0.000457764
+margin_right = 0.999557
+margin_bottom = -9.00012
+rect_pivot_offset = Vector2( 71, 18 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="MenuButton" type="MenuButton" parent="ColorRect/ButtonDELETE"]
+margin_left = -150.2
+margin_top = 0.999969
+margin_right = 35.8
+margin_bottom = 47.0
+text = "Select..."
+items = [ "Happy", ExtResource( 3 ), 0, false, false, 0, 0, null, "", false, "Angry", ExtResource( 4 ), 0, false, false, 1, 0, null, "", false, "Neutral", ExtResource( 6 ), 0, false, false, 2, 0, null, "", false ]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton" type="TextureButton" parent="."]
+visible = false
+anchor_left = 0.0380862
+anchor_top = 0.58
+anchor_right = 0.196292
+anchor_bottom = 0.833333
+texture_normal = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = 918.0
+margin_top = 495.0
+margin_right = 1040.0
+margin_bottom = 601.0
+texture = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SpeechBubble" parent="TextureRect" instance=ExtResource( 8 )]
+anchor_left = 0.253
+anchor_top = 0.239
+anchor_right = 0.409
+anchor_bottom = 0.391
+margin_left = -11.7489
+margin_top = 28.9234
+margin_right = -30.7809
+margin_bottom = 12.8114
+[connection signal="pressed" from="ColorRect/Button1" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="ColorRect/Button1/Happy1" to="." method="_on_Happy1_pressed"]
+[connection signal="pressed" from="ColorRect/Button1/Neutral1" to="." method="_on_Neutral1_pressed"]
+[connection signal="pressed" from="ColorRect/Button1/Angry1" to="." method="_on_Angry1_pressed"]
+[connection signal="pressed" from="ColorRect/Button2" to="." method="_on_Button2_pressed"]
+[connection signal="pressed" from="ColorRect/Button2/Happy2" to="." method="_on_Happy2_pressed"]
+[connection signal="pressed" from="ColorRect/Button2/Neutral2" to="." method="_on_Neutral2_pressed"]
+[connection signal="pressed" from="ColorRect/Button2/Angry2" to="." method="_on_Angry2_pressed"]
+[connection signal="pressed" from="ColorRect/Button3" to="." method="_on_Button3_pressed"]
+[connection signal="pressed" from="ColorRect/Button3/Happy3" to="." method="_on_Happy3_pressed"]
+[connection signal="pressed" from="ColorRect/Button3/Neutral3" to="." method="_on_Neutral3_pressed"]
+[connection signal="pressed" from="ColorRect/Button3/Angry3" to="." method="_on_Angry3_pressed"]
+[connection signal="pressed" from="ColorRect/Button4" to="." method="_on_Button4_pressed"]
+[connection signal="pressed" from="ColorRect/Button4" to="." method="_on_Button3_pressed"]
+[connection signal="pressed" from="ColorRect/Button4/Happy4" to="." method="_on_Happy4_pressed"]
+[connection signal="pressed" from="ColorRect/Button4/Neutral4" to="." method="_on_Neutral4_pressed"]
+[connection signal="pressed" from="ColorRect/Button4/Angry4" to="." method="_on_Angry4_pressed"]
+[connection signal="pressed" from="ColorRect/Button5" to="." method="_on_Button5_pressed"]
+[connection signal="pressed" from="ColorRect/ButtonDELETE/MenuButton" to="." method="_on_MenuButton_pressed"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]
+[connection signal="mouse_entered" from="TextureRect" to="." method="_on_TextureRect_mouse_entered"]
+[connection signal="done" from="TextureRect/SpeechBubble" to="." method="_on_SpeechBubble_done"]
+[connection signal="speaking" from="TextureRect/SpeechBubble" to="." method="_on_SpeechBubble_speaking"]

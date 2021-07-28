@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Halloween.ogg-67139c9d9da67cb73be1be6f98087446.oggstr"
+
+[deps]
+
+source_file="res://assets/Halloween.ogg"
+dest_files=[ "res://.import/Halloween.ogg-67139c9d9da67cb73be1be6f98087446.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

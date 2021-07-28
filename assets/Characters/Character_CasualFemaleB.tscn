@@ -1,0 +1,85 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/Characters/Character.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/Characters/Skins/casualFemaleA_neutral.png" type="Texture" id=2]
+[ext_resource path="res://assets/Characters/Skins/casualFemaleB_neutral.png" type="Texture" id=3]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type spatial;
+uniform sampler2D skin;
+
+
+
+void vertex() {
+// Output:0
+
+}
+
+void fragment() {
+// Texture:2
+	vec4 tex_frg_2_read = texture(skin, UV.xy);
+	vec3 n_out2p0 = tex_frg_2_read.rgb;
+	float n_out2p1 = tex_frg_2_read.a;
+
+// Output:0
+	ALBEDO = n_out2p0;
+
+}
+
+void light() {
+// Output:0
+
+}
+"
+
+[sub_resource type="ShaderMaterial" id=2]
+resource_local_to_scene = true
+shader = SubResource( 1 )
+shader_param/skin = ExtResource( 2 )
+
+[sub_resource type="Animation" id=3]
+resource_name = "Wave"
+length = 3.0
+tracks/0/type = "transform"
+tracks/0/path = NodePath("Root/Skeleton:left_hand_thumb_1")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/keys = PoolRealArray( 0.3, 1, 1.011, 1.739, 10, 0, 0.981, 0, 1, 1, 1, 1, 0.8, 1, 0, 0, 0, 0, 0.981, 0, 1, 1, 1, 1 )
+tracks/1/type = "transform"
+tracks/1/path = NodePath("Root/Skeleton:bones/23/name")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = PoolRealArray( 0.3, 1, 1.871, 3.207, 1.834, 0.672, 0.659, 2.06, 1.062, 1, 1, 1, 1, 1, 0, 2.275, 0, 0, 0, 0, 1, 1, 1, 1, 1.8, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1 )
+tracks/2/type = "transform"
+tracks/2/path = NodePath("Root/Skeleton:left_arm")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = PoolRealArray( 0.71, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1 )
+tracks/3/type = "transform"
+tracks/3/path = NodePath("Root/Skeleton:eft_hand")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = PoolRealArray( 0.5, 1, 10, 100, 10, 1, 10, 10, 10, 1, 1, 1, 0.8, 1, 10, 0, 0, 0, 0, 0, 1, 1, 1, 1 )
+
+[node name="Character_casual_female_B" instance=ExtResource( 1 )]
+neutral_skin = ExtResource( 3 )
+
+[node name="Character" parent="Root/Skeleton" index="0"]
+material/0 = SubResource( 2 )
+
+[node name="AnimationPlayer" parent="." index="3"]
+anims/Wave = SubResource( 3 )
+
+[node name="SocialSpace" parent="." index="5"]
+input_ray_pickable = false
+
+[node name="PersonalSpace" parent="." index="6"]
+input_ray_pickable = false

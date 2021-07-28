@@ -1,0 +1,624 @@
+[gd_scene load_steps=51 format=2]
+
+[ext_resource path="res://assets/NatureTerrain.meshlib" type="MeshLibrary" id=1]
+[ext_resource path="res://Game.gd" type="Script" id=2]
+[ext_resource path="res://assets/Characters/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/Characters/Character_BusinessMaleB.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/Characters/Character_CasualFemaleB.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/NatureTerrainProps.meshlib" type="MeshLibrary" id=6]
+[ext_resource path="res://assets/Characters/Character_farmerA.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/Characters/Character_RacerBlueFemale.tscn" type="PackedScene" id=8]
+[ext_resource path="res://UI.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/Characters/Character_casualFemaleA.tscn" type="PackedScene" id=10]
+[ext_resource path="res://ProximityGroup2.gd" type="Script" id=11]
+[ext_resource path="res://ProximityGroup3.gd" type="Script" id=12]
+[ext_resource path="res://assets/grave.meshlib" type="MeshLibrary" id=13]
+[ext_resource path="res://assets/smoke.png" type="Texture" id=14]
+[ext_resource path="res://MenuButton.gd" type="Script" id=15]
+[ext_resource path="res://ProximityGroup1.gd" type="Script" id=16]
+[ext_resource path="res://ProximityGroup4.gd" type="Script" id=17]
+[ext_resource path="res://ProximityGroup5.gd" type="Script" id=18]
+[ext_resource path="res://assets/Characters/Detective.gd" type="Script" id=19]
+[ext_resource path="res://Lato-Regular.ttf" type="DynamicFontData" id=20]
+[ext_resource path="res://assets/Characters/Skins/businessMaleB_neutral.png" type="Texture" id=21]
+[ext_resource path="res://assets/Characters/Skins/farmerA_neutral.png" type="Texture" id=22]
+[ext_resource path="res://assets/Characters/Character_RacerBlueFemale.gd" type="Script" id=23]
+[ext_resource path="res://assets/Characters/Skins/racerBlueFemale_neutral.png" type="Texture" id=24]
+[ext_resource path="res://assets/Characters/Character_casualFemaleA.gd" type="Script" id=25]
+[ext_resource path="res://assets/Characters/Character_BusinessMaleB.gd" type="Script" id=26]
+[ext_resource path="res://assets/Characters/Skins/casualFemaleB_neutral.png" type="Texture" id=27]
+[ext_resource path="res://assets/Characters/Character_farmerA.gd" type="Script" id=28]
+[ext_resource path="res://assets/Characters/Character_CasualFemaleB.gd" type="Script" id=29]
+[ext_resource path="res://assets/Characters/Skins/casualFemaleA_neutral.png" type="Texture" id=30]
+[ext_resource path="res://QuestionsExplanations.tscn" type="PackedScene" id=31]
+[ext_resource path="res://assets/Halloween.ogg" type="AudioStream" id=32]
+[ext_resource path="res://FredokaOne-Regular.ttf" type="DynamicFontData" id=33]
+[ext_resource path="res://assets/Characters/Skins/racerOrangeFemale_neutral.png" type="Texture" id=34]
+[ext_resource path="res://assets/Characters/Skins/athleteMaleYellow_neutral.png" type="Texture" id=35]
+[ext_resource path="res://assets/Characters/Skins/casualMaleB_neutral.png" type="Texture" id=36]
+[ext_resource path="res://assets/Characters/Skins/fantasyFemaleB_neutral.png" type="Texture" id=37]
+[ext_resource path="res://assets/Characters/Skins/athleteMaleRed_neutral.png" type="Texture" id=38]
+
+[sub_resource type="ProceduralSky" id=1]
+sky_top_color = Color( 0, 0, 0, 1 )
+sky_horizon_color = Color( 0.0258026, 0.211874, 0.347656, 1 )
+sky_curve = 0.0731029
+sky_energy = 0.25
+ground_bottom_color = Color( 0, 0, 0, 1 )
+ground_horizon_color = Color( 0.92549, 0.898039, 0.866667, 1 )
+sun_color = Color( 0.988235, 0.87451, 0.137255, 1 )
+sun_curve = 0.110957
+sun_energy = 0.0
+
+[sub_resource type="Environment" id=2]
+background_mode = 2
+background_sky = SubResource( 1 )
+ambient_light_color = Color( 0.211765, 0.313726, 0.552941, 1 )
+ambient_light_energy = 3.04
+fog_enabled = true
+fog_depth_begin = 1.0
+fog_depth_end = 20.0
+fog_depth_curve = 0.241484
+fog_height_enabled = true
+fog_height_min = 0.5
+fog_height_max = -1.0
+fog_height_curve = 0.707106
+dof_blur_far_enabled = true
+dof_blur_far_amount = 0.05
+glow_enabled = true
+glow_strength = 1.37
+
+[sub_resource type="SpatialMaterial" id=3]
+flags_unshaded = true
+vertex_color_use_as_albedo = true
+params_blend_mode = 1
+params_billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+albedo_texture = ExtResource( 14 )
+
+[sub_resource type="QuadMesh" id=4]
+
+[sub_resource type="Curve" id=5]
+_data = [ Vector2( 0.0890411, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.434932, 0.2125 ), 0.0, 0.0, 0, 0, Vector2( 0.804795, 0.0306818 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="Gradient" id=6]
+offsets = PoolRealArray( 0, 0.505576, 1 )
+colors = PoolColorArray( 0.988281, 0.814982, 0.135117, 1, 0.996253, 0.388108, 0.0431971, 1, 1, 0.1875, 0, 1 )
+
+[sub_resource type="DynamicFont" id=7]
+font_data = ExtResource( 20 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 19
+font_data = ExtResource( 33 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 15
+extra_spacing_space = 2
+font_data = ExtResource( 33 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 19
+font_data = ExtResource( 33 )
+
+[sub_resource type="DynamicFont" id=11]
+size = 14
+font_data = ExtResource( 33 )
+
+[sub_resource type="DynamicFont" id=12]
+size = 30
+font_data = ExtResource( 20 )
+
+[node name="Game" type="Spatial"]
+script = ExtResource( 2 )
+DEBUG = false
+
+[node name="Terrain" type="GridMap" parent="."]
+mesh_library = ExtResource( 1 )
+cell_size = Vector3( 1, 1, 1 )
+cell_center_y = false
+data = {
+"cells": PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, -1609957376, 6, 0, 13, 7, 0, 0, 8, 0, 0, 9, 0, 536870912, 10, 0, -2146041856, 11, 0, -536870912, 12, 0, -1610612736, 65524, 0, 1610612736, 65525, 0, 27, 65526, 0, 536870912, 65527, 0, 537526275, 65528, 0, 1074790404, 65529, 0, -535822328, 65530, 0, -1072693240, 65531, 0, -535822328, 65532, 0, 4, 65533, 0, 1048579, 65534, 0, 1441792, 65535, 0, 1441792, 0, 1, 0, 1, 1, 0, 2, 1, 536870912, 3, 1, 0, 4, 1, 1073741824, 5, 1, 655360, 6, 1, 655373, 7, 1, 0, 8, 1, 0, 9, 1, 0, 10, 1, 1441792, 11, 1, 0, 12, 1, 0, 65524, 1, 0, 65525, 1, 23, 65526, 1, 0, 65527, 1, 1441802, 65528, 1, 1048584, 65529, 1, 1048584, 65530, 1, 1048584, 65531, 1, 1048584, 65532, 1, 1048584, 65533, 1, 4, 65534, 1, 1048579, 65535, 1, 0, 0, 2, 0, 1, 2, 0, 2, 2, 0, 3, 2, 0, 4, 2, 0, 5, 2, 655360, 6, 2, 13, 7, 2, 0, 8, 2, 0, 9, 2, 0, 10, 2, 1441792, 11, 2, 0, 12, 2, 0, 65524, 2, 0, 65525, 2, 23, 65526, 2, 0, 65527, 2, 1441802, 65528, 2, 1048584, 65529, 2, 1048584, 65530, 2, 1048584, 65531, 2, -1609564152, 65532, 2, 1048584, 65533, 2, 1048584, 65534, 2, 4, 65535, 2, 1048579, 0, 3, 1048579, 1, 3, 1048576, 2, 3, 1048576, 3, 3, 1048576, 4, 3, 0, 5, 3, -1609170944, 6, 3, 13, 7, 3, 1048576, 8, 3, 0, 9, 3, 1048576, 10, 3, 1048576, 11, 3, 0, 12, 3, 0, 65524, 3, 0, 65525, 3, 27, 65526, 3, 0, 65527, 3, 1441802, 65528, 3, 1048584, 65529, 3, 1048584, 65530, 3, 1048584, 65531, 3, 1048584, 65532, 3, 1048584, 65533, 3, 1048584, 65534, 3, 1048584, 65535, 3, 4, 0, 4, 4, 1, 4, 655370, 2, 4, 1048579, 3, 4, 1441792, 4, 4, 1441792, 5, 4, 655360, 6, 4, 655373, 7, 4, 1048576, 8, 4, 1048576, 9, 4, 1048576, 10, 4, 1048576, 11, 4, 0, 12, 4, 0, 65524, 4, 0, 65525, 4, -1610612713, 65526, 4, 0, 65527, 4, 1441802, 65528, 4, 1048584, 65529, 4, -1609564152, 65530, 4, 1048584, 65531, 4, 1048584, 65532, 4, 1048584, 65533, 4, 1048584, 65534, 4, 1048584, 65535, 4, 1048584, 0, 5, 1048584, 1, 5, 1048584, 2, 5, 4, 3, 5, 655370, 4, 5, 655370, 5, 5, 655370, 6, 5, 1048586, 7, 5, 1048576, 8, 5, 1048576, 9, 5, 1048576, 10, 5, 1048576, 11, 5, 0, 12, 5, 0, 65524, 5, 0, 65525, 5, -1609957349, 65526, 5, 0, 65527, 5, 1441802, 65528, 5, 1048584, 65529, 5, 1048584, 65530, 5, 1048584, 65531, 5, 655377, 65532, 5, 655384, 65533, 5, 1048593, 65534, 5, 8, 65535, 5, 1048584, 0, 6, -1609564152, 1, 6, 1048584, 2, 6, 1048584, 3, 6, 1048584, 4, 6, 1048584, 5, 6, 1048584, 6, 6, 1048586, 7, 6, 1048576, 8, 6, 1048576, 9, 6, -1609564160, 10, 6, 1048576, 11, 6, 0, 12, 6, 0, 65524, 6, 0, 65525, 6, 27, 65526, 6, 0, 65527, 6, 1441802, 65528, 6, 1048584, 65529, 6, -1609564152, 65530, 6, 1048584, 65531, 6, 1441816, 65532, 6, 22, 65533, 6, 1048600, 65534, 6, 8, 65535, 6, 1048584, 0, 7, 1048584, 1, 7, 1048584, 2, 7, -1609564152, 3, 7, 1048584, 4, 7, -1609170940, 5, 7, 10, 6, 7, 3, 7, 7, 1048576, 8, 7, 1048576, 9, 7, 1048576, 10, 7, 1048576, 11, 7, 0, 12, 7, -1610612736, 65524, 7, 0, 65525, 7, -1609957349, 65526, 7, 0, 65527, 7, 1441802, 65528, 7, 655368, 65529, 7, 1048584, 65530, 7, 1048584, 65531, 7, 1441809, 65532, 7, 24, 65533, 7, 17, 65534, 7, 8, 65535, 7, 1048584, 0, 8, 1048584, 1, 8, 1048584, 2, 8, -1609564152, 3, 8, 1048584, 4, 8, 1048586, 5, 8, 1048576, 6, 8, 1048576, 7, 8, 1048576, 8, 8, 1048576, 9, 8, 1048576, 10, 8, -1609564160, 11, 8, 0, 12, 8, 0, 65524, 8, 0, 65525, 8, 23, 65526, 8, 0, 65527, 8, 1441795, 65528, 8, 655364, 65529, 8, 1048584, 65530, 8, 1048584, 65531, 8, 1048584, 65532, 8, 1048584, 65533, 8, 1048584, 65534, 8, 1048584, 65535, 8, 1048584, 0, 9, 1048584, 1, 9, 1441796, 2, 9, 10, 3, 9, 10, 4, 9, 3, 5, 9, 1048576, 6, 9, 1048576, 7, 9, 1048576, 8, 9, 1048576, 9, 9, 1048576, 10, 9, 1048576, 11, 9, 0, 12, 9, 0, 65524, 9, 1441812, 65525, 9, 15, 65526, 9, 0, 65527, 9, 0, 65528, 9, 1441795, 65529, 9, 10, 65530, 9, 655364, 65531, 9, 655368, 65532, 9, 1048584, 65533, 9, 1048584, 65534, 9, 1048584, 65535, 9, 1048584, 0, 10, 10, 1, 10, 3, 2, 10, 1048576, 3, 10, 1048576, 4, 10, 1048576, 5, 10, 1048576, 6, 10, 1048576, 7, 10, 1048576, 8, 10, 1048576, 9, 10, 1048576, 10, 10, 1048576, 11, 10, 0, 12, 10, 0, 65524, 10, 0, 65525, 10, 0, 65526, 10, 1048604, 65527, 10, 0, 65528, 10, 0, 65529, 10, 0, 65530, 10, 1441795, 65531, 10, 10, 65532, 10, 10, 65533, 10, 10, 65534, 10, 10, 65535, 10, 10, 0, 11, 0, 1, 11, 0, 2, 11, 0, 3, 11, 0, 4, 11, 0, 5, 11, 0, 6, 11, 0, 7, 11, 0, 8, 11, 0, 9, 11, 0, 10, 11, 0, 11, 11, 0, 12, 11, 0, 65524, 11, 0, 65525, 11, 0, 65526, 11, 0, 65527, 11, 0, 65528, 11, 0, 65529, 11, 0, 65530, 11, 0, 65531, 11, 0, 65532, 11, 0, 65533, 11, 0, 65534, 11, 0, 65535, 11, 0, 65527, 65528, 0, 65528, 65528, 0, 0, 65529, 0, 1, 65529, 0, 2, 65529, 0, 3, 65529, 0, 4, 65529, 0, 5, 65529, 0, 6, 65529, 0, 7, 65529, 0, 8, 65529, 0, 9, 65529, 0, 10, 65529, 0, 11, 65529, 0, 12, 65529, 0, 65524, 65529, 0, 65525, 65529, 0, 65526, 65529, 0, 65527, 65529, 23, 65528, 65529, 0, 65529, 65529, 0, 65530, 65529, 0, 65531, 65529, 0, 65532, 65529, 0, 65533, 65529, 0, 65534, 65529, 0, 65535, 65529, -536870912, 0, 65530, 1441792, 1, 65530, 1441792, 2, 65530, 0, 3, 65530, 0, 4, 65530, 0, 5, 65530, 0, 6, 65530, 0, 7, 65530, 0, 8, 65530, 1441792, 9, 65530, 1441792, 10, 65530, 1441792, 11, 65530, 0, 12, 65530, 0, 65524, 65530, 0, 65525, 65530, -1073741824, 65526, 65530, -1610612736, 65527, 65530, 655383, 65528, 65530, -2147483648, 65529, 65530, 1073741824, 65530, 65530, 0, 65531, 65530, 0, 65532, 65530, -536870912, 65533, 65530, 0, 65534, 65530, 1441792, 65535, 65530, -2146041856, 0, 65531, 0, 1, 65531, 0, 2, 65531, 0, 3, 65531, -1610612736, 4, 65531, 536870912, 5, 65531, -1073741824, 6, 65531, -1610612736, 7, 65531, 0, 8, 65531, 0, 9, 65531, 0, 10, 65531, 1441792, 11, 65531, 0, 12, 65531, 0, 65524, 65531, 0, 65525, 65531, 0, 65526, 65531, 0, 65527, 65531, 27, 65528, 65531, 0, 65529, 65531, 655363, 65530, 65531, 655370, 65531, 65531, 655370, 65532, 65531, 655370, 65533, 65531, 655370, 65534, 65531, -536215542, 65535, 65531, 1048579, 0, 65532, 1048589, 1, 65532, 1441805, 2, 65532, 1048589, 3, 65532, 1441805, 4, 65532, 655370, 5, 65532, 655370, 6, 65532, 655370, 7, 65532, 655370, 8, 65532, 1048579, 9, 65532, 0, 10, 65532, 538312704, 11, 65532, 0, 12, 65532, 0, 65524, 65532, 0, 65525, 65532, 0, 65526, 65532, 655375, 65527, 65532, 1073741840, 65528, 65532, 0, 65529, 65532, 538312714, 65530, 65532, 1048584, 65531, 65532, 537919496, 65532, 65532, 1048584, 65533, 65532, 1048584, 65534, 65532, 1048584, 65535, 65532, 1441796, 0, 65533, 1441792, 1, 65533, 0, 2, 65533, -2147483648, 3, 65533, 0, 4, 65533, -2146041846, 5, 65533, 537526280, 6, 65533, 655368, 7, 65533, 1048584, 8, 65533, 1074790410, 9, 65533, 1610612736, 10, 65533, 1441792, 11, 65533, -2147483648, 12, 65533, 0, 65524, 65533, 536870912, 65525, 65533, -536215537, 65526, 65533, 16, 65527, 65533, -1610612736, 65528, 65533, -1073741824, 65529, 65533, 1441802, 65530, 65533, 1048584, 65531, 65533, -1609564152, 65532, 65533, 1611661320, 65533, 65533, 10, 65534, 65533, -536870902, 65535, 65533, 3, 0, 65534, -1072300032, 1, 65534, -1073741824, 2, 65534, -536870912, 3, 65534, 0, 4, 65534, 1441802, 5, 65534, 655368, 6, 65534, -1073086456, 7, 65534, 1048584, 8, 65534, 1074790410, 9, 65534, -1610612736, 10, 65534, 1441792, 11, 65534, 0, 12, 65534, 0, 65524, 65534, -536870912, 65525, 65534, 655383, 65526, 65534, 0, 65527, 65534, 1441792, 65528, 65534, 0, 65529, 65534, 1441802, 65530, 65534, 1048584, 65531, 65534, 1441796, 65532, 65534, 536870915, 65533, 65534, 1441792, 65534, 65534, 1441792, 65535, 65534, 1441792, 0, 65535, 1441792, 1, 65535, 0, 2, 65535, 0, 3, 65535, -1610612736, 4, 65535, 1441795, 5, 65535, 10, 6, 65535, 655371, 7, 65535, 10, 8, 65535, -1610612733, 9, 65535, 0, 10, 65535, 1441792, 11, 65535, 0, 12, 65535, 0, 65524, 65535, 0, 65525, 65535, 23, 65526, 65535, 0, 65527, 65535, 0, 65528, 65535, 655363, 65529, 65535, 1048580, 65530, 65535, 1048584, 65531, 65535, 4, 65532, 65535, 1048579, 65533, 65535, 1441792, 65534, 65535, 1441792, 65535, 65535, 1441792 )
+}
+__meta__ = {
+"_editor_clip_": 0,
+"_editor_floor_": Vector3( 0, 0, 0 )
+}
+
+[node name="Cliffs" type="GridMap" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.49012e-08, 0 )
+mesh_library = ExtResource( 1 )
+cell_size = Vector3( 1, 1, 1 )
+cell_center_y = false
+data = {
+"cells": PoolIntArray( 12, 0, 1441859, 65524, 0, 1048643, 65548, 0, 1441857, 131060, 0, 1048641, 12, 1, 1441859, 65524, 1, 1048643, 65548, 1, 1441857, 131060, 1, 1048641, 12, 2, 1441859, 65524, 2, 1048643, 65548, 2, 1441857, 131060, 2, 1048641, 12, 3, 1441859, 65524, 3, 1048643, 65548, 3, 1441857, 131060, 3, 1048641, 9, 4, 1441864, 10, 4, 655434, 11, 4, 655432, 12, 4, 1441859, 65524, 4, 1048643, 65548, 4, 1441857, 131060, 4, 1048641, 9, 5, 1441866, 10, 5, 655403, 11, 5, 655403, 12, 5, -1609957333, 65524, 5, 1048643, 65548, 5, 1441857, 131060, 5, 1048641, 9, 6, 1441866, 10, 6, 1074397227, 11, 6, 655403, 12, 6, -1609957333, 65524, 6, 1048643, 65548, 6, 1441857, 131060, 6, 1048641, 8, 7, 1441864, 9, 7, 1441862, 10, 7, 655403, 11, 7, 655403, 12, 7, 655403, 65524, 7, -535822269, 65548, 7, 1441857, 131060, 7, 1048641, 7, 8, 1441864, 8, 8, 1441862, 9, 8, 655403, 10, 8, 655403, 11, 8, 655403, 12, 8, 655403, 65524, 8, 1048643, 65548, 8, 1441857, 131060, 8, 1048641, 7, 9, -2146041782, 8, 9, 655403, 9, 9, 655403, 10, 9, 655403, 11, 9, 655403, 12, 9, 655403, 65524, 9, 1048643, 65548, 9, 1441857, 131060, 9, 1048641, 7, 10, 72, 8, 10, 655403, 9, 10, 655403, 10, 10, 655403, 11, 10, 655403, 12, 10, 655403, 65524, 10, 1048643, 65548, 10, 1441857, 131060, 10, 1048641, 0, 11, 655427, 1, 11, 655427, 2, 11, 655427, 3, 11, 655427, 4, 11, 655427, 5, 11, 655427, 6, 11, 655427, 7, 11, 655427, 8, 11, 655403, 9, 11, 655403, 10, 11, 655403, 11, 11, 655403, 12, 11, 655403, 65524, 11, 655407, 65525, 11, 655427, 65526, 11, 655427, 65527, 11, 655427, 65528, 11, 655427, 65529, 11, 655443, 65530, 11, 655427, 65531, 11, 655427, 65532, 11, 655427, 65533, 11, 655427, 65534, 11, 655427, 65535, 11, 655427, 65536, 11, 655425, 65537, 11, 655425, 65538, 11, 655425, 65539, 11, 655425, 65540, 11, 655425, 65541, 11, 655425, 65542, 11, 655425, 65543, 11, 655425, 65544, 11, 655425, 65545, 11, 655425, 65546, 11, 655425, 65547, 11, 655425, 65548, 11, 1441853, 131060, 11, 655421, 131061, 11, 655425, 131062, 11, 655425, 131063, 11, 655425, 131064, 11, 655425, 131065, 11, 655425, 131066, 11, 655425, 131067, 11, 655425, 131068, 11, 655425, 131069, 11, 655425, 131070, 11, 655425, 131071, 11, 655425, 0, 65529, 67, 1, 65529, 67, 2, 65529, 67, 3, 65529, 67, 4, 65529, 67, 5, 65529, 67, 6, 65529, 67, 7, 65529, 67, 8, 65529, 67, 9, 65529, 67, 10, 65529, 67, 11, 65529, 67, 12, 65529, 47, 65524, 65529, 1048623, 65525, 65529, 67, 65526, 65529, 67, 65527, 65529, 67, 65528, 65529, 67, 65529, 65529, 67, 65530, 65529, 67, 65531, 65529, 67, 65532, 65529, 67, 65533, 65529, 67, 65534, 65529, 67, 65535, 65529, 67, 65536, 65529, 65, 65537, 65529, 65, 65538, 65529, 65, 65539, 65529, 65, 65540, 65529, 65, 65541, 65529, 65, 65542, 65529, 65, 65543, 65529, 65, 65544, 65529, 65, 65545, 65529, 65, 65546, 65529, 65, 65547, 65529, 65, 65548, 65529, 61, 131060, 65529, 537919549, 131061, 65529, -1610612671, 131062, 65529, 65, 131063, 65529, 65, 131064, 65529, 65, 131065, 65529, 65, 131066, 65529, 65, 131067, 65529, 65, 131068, 65529, 65, 131069, 65529, 65, 131070, 65529, 65, 131071, 65529, 65, 12, 65530, 1441859, 65524, 65530, 1048643, 65548, 65530, 1441857, 131060, 65530, 1048641, 12, 65531, 1441859, 65524, 65531, 1048643, 65548, 65531, 1441857, 131060, 65531, 1048641, 12, 65532, 1441859, 65524, 65532, 1048643, 65548, 65532, 1441857, 131060, 65532, 1048641, 12, 65533, 1441859, 65524, 65533, 1048643, 65548, 65533, 1441857, 131060, 65533, 537919553, 12, 65534, 1441859, 65524, 65534, 1048643, 65548, 65534, 1441857, 131060, 65534, 1048641, 12, 65535, 1441859, 65524, 65535, 1048643, 65548, 65535, 1441857, 131060, 65535, 537919553 )
+}
+__meta__ = {
+"_editor_clip_": 0,
+"_editor_floor_": Vector3( 0, 1, 0 )
+}
+
+[node name="Props" type="GridMap" parent="."]
+mesh_library = ExtResource( 6 )
+cell_size = Vector3( 1, 1, 1 )
+cell_center_y = false
+data = {
+"cells": PoolIntArray( 3, 0, 655373, 65534, 0, 21, 0, 1, 655376, 5, 1, 1441826, 9, 1, -535429099, 10, 1, 1441812, 65524, 1, 655382, 65535, 1, 21, 0, 2, 22, 2, 2, 12, 3, 2, 655380, 7, 2, 655373, 11, 2, 655406, 65526, 2, -536870891, 8, 3, 655378, 11, 3, 1441825, 65524, 3, 33, 4, 4, 22, 65532, 4, 87, 65525, 5, 25, 65531, 5, 1441881, 65533, 5, 655449, 65546, 5, 655377, 65547, 5, 655381, 8, 6, 33, 65524, 6, 655384, 65526, 6, 22, 65531, 6, 538312791, 65532, 6, 25, 65534, 6, 1441879, 65546, 6, 655379, 65547, 6, 655422, 65524, 7, 655383, 65531, 7, 89, 65532, 7, 87, 65533, 7, 1048665, 65546, 7, 655396, 65547, 7, 655437, 1, 8, 86, 2, 8, 2, 3, 8, 86, 65523, 8, 655382, 65524, 8, 655382, 65532, 8, 655447, 65545, 8, 655373, 65546, 8, 655412, 65547, 8, 655418, 2, 9, 1441878, 65524, 9, 536870938, 65526, 9, 655376, 65544, 9, 655383, 65545, 9, 655418, 65546, 9, 655375, 65547, 9, 655415, 5, 10, 66, 6, 10, 655376, 65527, 10, 655378, 65544, 10, 655373, 65545, 10, 655422, 65546, 10, 655397, 65547, 10, 655418, 3, 11, 655372, 65532, 11, 655376, 65528, 65529, 1073741895, 0, 65530, 655378, 4, 65530, 1441825, 7, 65530, 538312725, 9, 65530, 655376, 65533, 65530, 655373, 4, 65531, 1441812, 65527, 65531, 1073741916, 65534, 65531, 536870933, 9, 65532, 1441826, 65524, 65533, 655373, 65527, 65533, 655373, 65524, 65534, -1609957358, 65534, 65534, 22, 2, 65535, 22, 9, 65535, 21, 65524, 65535, 32 )
+}
+__meta__ = {
+"_editor_clip_": 0,
+"_editor_floor_": Vector3( 0, 0, 0 )
+}
+
+[node name="Graveyard" type="GridMap" parent="."]
+mesh_library = ExtResource( 13 )
+cell_size = Vector3( 1, 1, 1 )
+cell_center_y = false
+data = {
+"cells": PoolIntArray( 0, 0, 536870933, 1, 0, 537526293, 4, 0, 537526278, 5, 0, 1048596, 7, 0, -535429100, 8, 0, 655366, 10, 0, 1441802, 11, 0, 1441813, 12, 0, 1441813, 65524, 0, 1073741845, 65533, 0, 1612054548, 65534, 0, 21, 65535, 0, 21, 0, 1, 1073741845, 1, 1, -1073086447, 2, 1, -1073086447, 3, 1, 655377, 4, 1, 655377, 5, 1, 655377, 6, 1, 655378, 7, 1, 655377, 8, 1, 537526289, 9, 1, 1611268113, 10, 1, 655377, 11, 1, 1612054549, 12, 1, 1441813, 65526, 1, 1048596, 65535, 1, 21, 4, 2, 1073741825, 5, 2, 1048596, 10, 2, -1609170936, 65524, 2, 536870933, 65535, 2, 1612054548, 1, 3, -2147483628, 7, 4, 1612054548, 65526, 4, 1048596, 65532, 4, 1, 4, 5, 1, 65524, 6, 21, 65524, 7, 21, 65526, 7, 1048596, 5, 8, -535429100, 65527, 9, 1611268116, 65524, 10, 537526293, 65525, 10, 655381, 65529, 10, 655380, 0, 11, 655380, 3, 11, 21, 65524, 11, 537526293, 65525, 11, 537526293, 65526, 11, 655381, 65527, 11, 655381, 65528, 11, 1048597, 65529, 11, 537919509, 1, 65529, 1441813, 2, 65529, 1441813, 3, 65529, 1441813, 4, 65529, 1441813, 8, 65529, 2, 10, 65529, 538312725, 11, 65529, 1441813, 12, 65529, -535429099, 65524, 65529, 655381, 65525, 65529, 655381, 65531, 65529, 655381, 65532, 65529, 655381, 0, 65530, 1441809, 1, 65530, 1441813, 2, 65530, 1441813, 3, 65530, 1441813, 6, 65530, 7, 11, 65530, 1441803, 12, 65530, 1441813, 65524, 65530, 655381, 65525, 65530, 655381, 0, 65531, 1441809, 1, 65531, 1441813, 2, 65531, 24, 3, 65531, 1441800, 6, 65531, 1048595, 7, 65531, 1441801, 11, 65531, 538312725, 12, 65531, 1441813, 65524, 65531, 537526293, 65532, 65531, 20, 65533, 65531, 1073741825, 65535, 65531, 20, 0, 65532, 1441810, 10, 65532, 1612054540, 11, 65532, 1075183629, 12, 65532, 1441813, 0, 65533, -535429103, 1, 65533, 1441807, 2, 65533, 1441804, 10, 65533, 1441804, 11, 65533, 1441806, 0, 65534, 21, 1, 65534, 1441797, 2, 65534, 1441804, 3, 65534, 538312727, 10, 65534, 1441804, 11, 65534, 1441805, 12, 65534, 24, 65528, 65534, 1611661332, 65533, 65534, 655380, 65535, 65534, 21, 0, 65535, 21, 1, 65535, 1611268117, 12, 65535, 1441813, 65524, 65535, 21, 65535, 65535, 21 )
+}
+__meta__ = {
+"_editor_clip_": 0
+}
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 2 )
+
+[node name="UI" parent="." instance=ExtResource( 9 )]
+margin_left = 1.16638
+margin_top = 1.16632
+margin_right = 1.16638
+margin_bottom = 1.16632
+
+[node name="NPCs" type="Spatial" parent="."]
+
+[node name="ProximityGroup1" type="ProximityGroup" parent="NPCs"]
+group_name = "Group1"
+script = ExtResource( 16 )
+
+[node name="Townsperson1" parent="NPCs/ProximityGroup1" instance=ExtResource( 5 )]
+transform = Transform( -0.949472, -0.00247853, -0.470776, 0.001, 1, 0.012, -0.313219, 0.0113955, 0.792698, -5.24468, -0.0726709, -4.18934 )
+input_ray_pickable = true
+script = ExtResource( 29 )
+username = "Jay"
+neutral_skin = ExtResource( 35 )
+
+[node name="Townsperson2" parent="NPCs/ProximityGroup1" instance=ExtResource( 8 )]
+transform = Transform( 0.719, 0.005, 0.695, 0.001, 1, -0.006, -0.695, 0.003, 0.719, -5.84049, -0.045, -3.78895 )
+input_ray_pickable = true
+script = ExtResource( 23 )
+username = "Jess"
+neutral_skin = ExtResource( 27 )
+
+[node name="ProximityGroup2" type="ProximityGroup" parent="NPCs"]
+group_name = "Group2"
+script = ExtResource( 11 )
+
+[node name="Townsperson3" parent="NPCs/ProximityGroup2" instance=ExtResource( 10 )]
+transform = Transform( 0.244851, 0, -0.969561, 0, 1, 0, 0.969561, 0, 0.244851, -0.181421, 0.0028826, 3.91499 )
+input_ray_pickable = true
+script = ExtResource( 25 )
+username = "Sarah"
+neutral_skin = ExtResource( 24 )
+
+[node name="ProximityGroup3" type="ProximityGroup" parent="NPCs"]
+group_name = "Group3"
+script = ExtResource( 12 )
+
+[node name="Townsperson4" parent="NPCs/ProximityGroup3" instance=ExtResource( 4 )]
+transform = Transform( -0.902405, 0, -0.430889, 0, 1, 0, 0.43089, 0, -0.902405, 7.398, -0.026153, -1.71 )
+input_ray_pickable = true
+script = ExtResource( 26 )
+username = "Tom"
+neutral_skin = ExtResource( 22 )
+
+[node name="Townsperson5" parent="NPCs/ProximityGroup3" instance=ExtResource( 4 )]
+transform = Transform( 0.995014, 0, -0.0997365, 0, 1, 0, 0.0997357, 0, 0.995014, 7.517, -0.0177173, -2.411 )
+input_ray_pickable = true
+script = ExtResource( 26 )
+username = "Mike"
+neutral_skin = ExtResource( 36 )
+
+[node name="ProximityGroup4" type="ProximityGroup" parent="NPCs"]
+group_name = "Group4"
+script = ExtResource( 17 )
+
+[node name="Townsperson6" parent="NPCs/ProximityGroup4" instance=ExtResource( 7 )]
+transform = Transform( -0.195039, 0, 0.861703, 0, 1, 0, -0.980796, 0, -0.506799, -7.05784, -0.007, 9.14078 )
+input_ray_pickable = true
+script = ExtResource( 28 )
+username = "Lucy"
+neutral_skin = ExtResource( 34 )
+
+[node name="Townsperson7" parent="NPCs/ProximityGroup4" instance=ExtResource( 7 )]
+transform = Transform( -0.994128, 0, -0.108206, 0, 1, 0, 0.108206, 0, -0.994128, -6.59268, -0.059, 9.36974 )
+input_ray_pickable = true
+script = ExtResource( 28 )
+username = "Bella"
+neutral_skin = ExtResource( 37 )
+
+[node name="ProximityGroup5" type="ProximityGroup" parent="NPCs"]
+group_name = "Group4"
+script = ExtResource( 18 )
+
+[node name="Townsperson8" parent="NPCs/ProximityGroup5" instance=ExtResource( 7 )]
+transform = Transform( -0.577644, 0, 0.816289, 0, 1, 0, -0.816289, 0, -0.577644, -7.444, -0.045, 0.488733 )
+input_ray_pickable = true
+script = ExtResource( 28 )
+username = "Chris"
+neutral_skin = ExtResource( 38 )
+
+[node name="Townsperson9" parent="NPCs/ProximityGroup5" instance=ExtResource( 7 )]
+transform = Transform( 0.859451, 0, 0.511217, 0, 1, 0, -0.511217, 0, 0.859451, -7.18826, -0.00958519, 0.103224 )
+input_ray_pickable = true
+script = ExtResource( 28 )
+username = "Kelly"
+neutral_skin = ExtResource( 30 )
+
+[node name="ProximityGroup6" type="ProximityGroup" parent="NPCs"]
+group_name = "Group2"
+
+[node name="Detective" parent="NPCs/ProximityGroup6" instance=ExtResource( 10 )]
+transform = Transform( 0.0997541, -4.33051e-11, -0.995012, 0, 1, 0, 0.995012, 2.28768e-10, 0.0997541, 3.098, -0.045, 7.028 )
+input_ray_pickable = true
+script = ExtResource( 19 )
+username = "Detective"
+neutral_skin = ExtResource( 21 )
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.00778121, -0.006539, 0.199742, -9.49297e-06, 0.199892, 0.00654436, -0.199849, -0.000264092, 0.00777772, 1.12168, 0.516687, 6.84986 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( -0.354135, 0.373992, -0.857157, 0.142807, 0.927432, 0.345653, 0.924227, -1.45106e-07, -0.381845, -15.0714, 7.56596, 4.1236 )
+light_color = Color( 0.996078, 0.847059, 0.615686, 1 )
+light_indirect_energy = 16.0
+directional_shadow_mode = 1
+directional_shadow_blend_splits = true
+
+[node name="StreetLights" type="Spatial" parent="."]
+
+[node name="OmniLight" type="OmniLight" parent="StreetLights"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.33588, 0.945994, 6.29325 )
+light_color = Color( 0.647059, 0.976471, 0.945098, 1 )
+light_energy = 0.95
+omni_range = 2.7171
+
+[node name="OmniLight2" type="OmniLight" parent="StreetLights"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4838, 1.47411, 3.82647 )
+light_energy = 2.0
+shadow_enabled = true
+shadow_bias = 0.53
+omni_range = 2.7171
+
+[node name="OmniLight3" type="OmniLight" parent="StreetLights"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.668987, 1.47411, 2.58848 )
+light_energy = 2.0
+shadow_bias = 0.53
+omni_range = 2.7171
+
+[node name="OmniLight4" type="OmniLight" parent="StreetLights"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7094, 1.47411, 0.51165 )
+light_energy = 2.0
+shadow_bias = 0.53
+omni_range = 2.7171
+
+[node name="OmniLight5" type="OmniLight" parent="StreetLights"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.49338, 1.47411, -1.60897 )
+light_energy = 2.0
+shadow_bias = 0.53
+omni_range = 2.7171
+
+[node name="OmniLight6" type="OmniLight" parent="StreetLights"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.472025, 1.47411, -4.23274 )
+light_energy = 2.0
+shadow_bias = 0.53
+omni_range = 2.5007
+
+[node name="OmniLight7" type="OmniLight" parent="StreetLights"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.47237, 1.47411, -4.23274 )
+light_energy = 2.0
+shadow_bias = 0.53
+omni_range = 2.7171
+
+[node name="OmniLight8" type="OmniLight" parent="StreetLights"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.45311, 1.47411, -1.39927 )
+light_energy = 3.0
+shadow_bias = 0.53
+omni_range = 2.7171
+
+[node name="OmniLight9" type="OmniLight" parent="StreetLights"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.21298, 1.47411, 1.52577 )
+light_energy = 2.0
+shadow_bias = 5.19
+omni_range = 2.7171
+
+[node name="OmniLight10" type="OmniLight" parent="StreetLights"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.21298, 1.47411, 4.53341 )
+light_energy = 2.0
+shadow_bias = 0.53
+omni_range = 2.7171
+
+[node name="OmniLight11" type="OmniLight" parent="StreetLights"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.21298, 1.47411, 7.57657 )
+light_energy = 2.0
+shadow_bias = 0.53
+omni_range = 2.7171
+
+[node name="OmniLight12" type="OmniLight" parent="StreetLights"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.47573, 1.47411, 9.2886 )
+light_energy = 2.0
+shadow_bias = 0.53
+omni_range = 2.7171
+
+[node name="OmniLight13" type="OmniLight" parent="StreetLights"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.43028, 1.47411, 10.1303 )
+light_energy = 2.0
+shadow_bias = 0.53
+omni_range = 2.7171
+
+[node name="OmniLight14" type="OmniLight" parent="StreetLights"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.509422, 1.47411, 11.2317 )
+light_energy = 2.0
+shadow_bias = 0.53
+omni_range = 2.7171
+
+[node name="OmniLight15" type="OmniLight" parent="StreetLights"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.28183, 1.47411, 8.52101 )
+light_energy = 2.0
+shadow_bias = 0.53
+omni_range = 2.43841
+
+[node name="OmniLight16" type="OmniLight" parent="StreetLights"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.25431, 1.47411, 4.53472 )
+light_energy = 2.0
+shadow_bias = 0.53
+omni_range = 2.41607
+
+[node name="OmniLight17" type="OmniLight" parent="StreetLights"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.79721, 1.47411, 2.54368 )
+light_energy = 2.0
+shadow_bias = 0.53
+omni_range = 2.7171
+
+[node name="OmniLight18" type="OmniLight" parent="StreetLights"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.79721, 1.47411, 0.524668 )
+light_energy = 2.0
+shadow_bias = 0.53
+omni_range = 2.28764
+
+[node name="OmniLight19" type="OmniLight" parent="StreetLights"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.26339, 1.47411, 0.524668 )
+light_energy = 2.0
+shadow_bias = 0.53
+omni_range = 2.32212
+
+[node name="OmniLight20" type="OmniLight" parent="StreetLights"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.30415, 1.47411, -4.44313 )
+light_energy = 2.0
+shadow_bias = 0.53
+omni_range = 2.52942
+
+[node name="OmniLight21" type="OmniLight" parent="StreetLights"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.76122, 1.47411, -4.44313 )
+light_energy = 2.0
+shadow_bias = 0.53
+omni_range = 2.53664
+
+[node name="Firepit" type="Spatial" parent="."]
+
+[node name="Fire" type="CPUParticles" parent="Firepit"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.48052, 0.0642584, 8.48646 )
+material_override = SubResource( 3 )
+amount = 6
+mesh = SubResource( 4 )
+spread = 0.0
+gravity = Vector3( 0, 0, 0 )
+angular_velocity = 30.0
+angular_velocity_random = 1.0
+angle_random = 1.0
+scale_amount = 3.5
+scale_amount_curve = SubResource( 5 )
+color_ramp = SubResource( 6 )
+
+[node name="OmniLight" type="OmniLight" parent="Firepit"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.52822, 0.115225, 8.43084 )
+light_color = Color( 1, 0.654902, 0, 1 )
+light_specular = 1.0
+omni_range = 1.67376
+
+[node name="MenuButton" type="Button" parent="."]
+margin_right = 69.0
+margin_bottom = 40.0
+custom_fonts/font = SubResource( 7 )
+action_mode = 0
+text = "Help"
+script = ExtResource( 15 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MenuRect" type="ColorRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -228.0
+margin_top = -168.5
+margin_right = 228.0
+margin_bottom = 168.5
+color = Color( 0.0588235, 0.054902, 0.054902, 0.215686 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Aim" type="Button" parent="MenuRect"]
+margin_left = 171.288
+margin_top = 68.5409
+margin_right = 276.288
+margin_bottom = 124.541
+action_mode = 0
+button_mask = 7
+text = "Aim"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Instructions" type="Button" parent="MenuRect"]
+margin_left = 171.288
+margin_top = 140.541
+margin_right = 276.288
+margin_bottom = 196.541
+action_mode = 0
+button_mask = 7
+text = "Game Controls"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Close" type="Button" parent="MenuRect"]
+margin_left = 193.045
+margin_top = 245.757
+margin_right = 260.045
+margin_bottom = 282.757
+action_mode = 0
+button_mask = 7
+text = "Close"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="AimRect" type="ColorRect" parent="MenuRect"]
+visible = false
+margin_left = -22.7122
+margin_top = -14.4591
+margin_right = 478.288
+margin_bottom = 384.541
+rect_min_size = Vector2( 0.485, 0 )
+rect_rotation = -360.0
+color = Color( 0.384314, 0.352941, 0.352941, 1 )
+
+[node name="CloseAim" type="Button" parent="MenuRect/AimRect"]
+margin_left = 205.417
+margin_top = 312.886
+margin_right = 280.417
+margin_bottom = 356.886
+text = "Close"
+
+[node name="Label3" type="Label" parent="MenuRect/AimRect"]
+margin_left = 35.6396
+margin_top = 15.0
+margin_right = 475.64
+margin_bottom = 46.0
+custom_fonts/font = SubResource( 8 )
+text = "Whats the aim of the game?"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label4" type="Label" parent="MenuRect/AimRect"]
+margin_left = 65.3241
+margin_top = 70.5402
+margin_right = 440.324
+margin_bottom = 303.54
+custom_fonts/font = SubResource( 9 )
+text = "As you know, you're here to solve a murder.
+
+ You will need to talk to the fellow townspeople to find out what they know.
+
+When the timer runs out, you need to tell who you think is the criminal: make sure you pay attention!
+"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InstructionsRect" type="ColorRect" parent="MenuRect"]
+visible = false
+margin_left = -24.0726
+margin_top = -14.4591
+margin_right = 476.927
+margin_bottom = 384.541
+rect_min_size = Vector2( 0.485, 0 )
+rect_rotation = -360.0
+color = Color( 0.384314, 0.368627, 0.368627, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CloseInst" type="Button" parent="MenuRect/InstructionsRect"]
+margin_left = 205.417
+margin_top = 312.886
+margin_right = 280.417
+margin_bottom = 356.886
+text = "Close"
+
+[node name="Label" type="Label" parent="MenuRect/InstructionsRect"]
+margin_left = 29.78
+margin_top = 16.805
+margin_right = 469.78
+margin_bottom = 47.805
+custom_fonts/font = SubResource( 10 )
+text = "Game Controls"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="MenuRect/InstructionsRect"]
+margin_left = 36.365
+margin_top = 56.7075
+margin_right = 465.365
+margin_bottom = 347.707
+custom_fonts/font = SubResource( 11 )
+text = "You can navigate the arena using the arrow or WASD keys.
+
+When you approach a character, click on them to interact.
+
+You can ask them a question using the dialogue options provided at the bottom of the screen.
+
+You can select a face expression: choose wisely!
+
+To start a conversation again, press the '...' button in the top right of the dialogue panel
+
+
+"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="QuestionsExplanations" parent="." instance=ExtResource( 31 )]
+visible = false
+
+[node name="Countdown" type="Label" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -37.0
+margin_right = 95.0
+size_flags_horizontal = 3
+size_flags_vertical = 5
+size_flags_stretch_ratio = 3.39
+custom_fonts/font = SubResource( 12 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "jhjkhjk"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 32 )
+volume_db = -80.0
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+[connection signal="spoke" from="Player" to="NPCs/ProximityGroup1/Townsperson1" method="_on_Player_spoke"]
+[connection signal="pressed" from="MenuButton" to="." method="_on_MenuButton_pressed"]
+[connection signal="pressed" from="MenuRect/Aim" to="." method="_on_Aim_pressed"]
+[connection signal="pressed" from="MenuRect/Instructions" to="." method="_on_Instructions_pressed"]
+[connection signal="pressed" from="MenuRect/Close" to="." method="_on_Close_pressed"]
+[connection signal="pressed" from="MenuRect/AimRect/CloseAim" to="." method="_on_CloseAim_pressed"]
+[connection signal="pressed" from="MenuRect/InstructionsRect/CloseInst" to="." method="_on_CloseAim_pressed"]
